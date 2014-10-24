@@ -1,0 +1,35 @@
+{
+  "name": "ealmansi.github.io",
+  "version": "0.1.0",
+  "description": "Emilio Almansi - Personal website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ealmansi/ealmansi.github.io.git"
+  },
+  "keywords": [
+    "emilio almansi",
+    "ealmansi",
+    "software",
+    "development",
+    "computer science",
+    "big data",
+    "programming languages",
+    "blockchain",
+    "bitcoin",
+    "buenos aires",
+    "argentina"
+  ],
+  "author": "ealmansi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ealmansi/ealmansi.github.io/issues"
+  },
+  "homepage": "https://github.com/ealmansi/ealmansi.github.io#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta"
+  }
+}

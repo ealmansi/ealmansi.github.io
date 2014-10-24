@@ -1,0 +1,44 @@
+html, body, #ea-container, #ea-row {
+    height: 100%;
+}
+
+#ea-row {
+    background: #cbffca;
+}
+
+#ea-col {
+    background: #ffffff;
+}
+
+#ea-logo {
+    margin-top: 15px;
+}
+
+#ea-intro {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 18px;
+    color: #3c3c3c;
+}
+
+#ea-mailto {
+    text-decoration: underline;
+    color: #3c3c3c;
+}
+
+#ea-contact {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#ea-contact h1 {
+    font-size: 22px;
+    margin-bottom: 4px;
+    display: inline-block;
+}
+
+#ea-contact h4 {
+    font-size: 17px;
+    margin-bottom: 4px;
+    color: #868686;
+}
