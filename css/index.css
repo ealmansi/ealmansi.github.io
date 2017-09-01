@@ -21,13 +21,6 @@ html, body, #ea-container, #ea-row, #ea-col {
     margin-top: 15px;
 }
 
-#ea-intro {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    font-size: 18px;
-    color: #3c3c3c;
-}
-
 #ea-emilio {
     display: inline;
 }
@@ -37,7 +30,7 @@ html, body, #ea-container, #ea-row, #ea-col {
     transition: opacity 150ms linear;
     height: auto;
     left: 15px;
-    max-width: 100px;
+    max-width: 150px;
     overflow: hidden;
     position: absolute;
     top: 15px;
@@ -49,20 +42,14 @@ html, body, #ea-container, #ea-row, #ea-col {
 
 .with-border {
     border: 1px solid #b3b3b3;
-    border-radius: 50px;
+    border-radius: 75px;
 }
 
-#ea-profile {
-    margin: 0 auto;
-    height: 100px;
-    width: 100px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
-    background:url("../img/profile.png") center no-repeat;
-    background-size:cover;
+#ea-intro {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #3c3c3c;
 }
 
 #ea-mailto {
