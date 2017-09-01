@@ -4,7 +4,7 @@ html, body, #ea-container, #ea-row, #ea-col {
 }
 
 #ea-row {
-    background: #caebff;
+    background: #cbffca;
 }
 
 #ea-col {
@@ -12,7 +12,7 @@ html, body, #ea-container, #ea-row, #ea-col {
 }
 
 #ea-logo-sm {
-    background: #caebff;
+    background: #cbffca;
     margin: 0px -15px; 
     padding: 15px 0px 15px 15px;
 }
