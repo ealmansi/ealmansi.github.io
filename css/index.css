@@ -4,7 +4,7 @@ html, body, #ea-container, #ea-row, #ea-col {
 }
 
 #ea-row {
-    background: #cbffca;
+    background: #dbffde;
 }
 
 #ea-col {
@@ -12,7 +12,7 @@ html, body, #ea-container, #ea-row, #ea-col {
 }
 
 #ea-logo-sm {
-    background: #cbffca;
+    background: #dbffde;
     margin: 0px -15px; 
     padding: 15px 0px 15px 15px;
 }
@@ -45,6 +45,11 @@ html, body, #ea-container, #ea-row, #ea-col {
 
 #ea-emilio:hover + #ea-profile-wrapper {
     opacity: 1;
+}
+
+.with-border {
+    border: 1px solid #b3b3b3;
+    border-radius: 50px;
 }
 
 #ea-profile {
