@@ -28,6 +28,38 @@ html, body, #ea-container, #ea-row, #ea-col {
     color: #3c3c3c;
 }
 
+#ea-emilio {
+    display: inline;
+}
+
+#ea-profile-wrapper {
+    opacity: 0;
+    transition: opacity 150ms linear;
+    height: auto;
+    left: 15px;
+    max-width: 100px;
+    overflow: hidden;
+    position: absolute;
+    top: 15px;
+}
+
+#ea-emilio:hover + #ea-profile-wrapper {
+    opacity: 1;
+}
+
+#ea-profile {
+    margin: 0 auto;
+    height: 100px;
+    width: 100px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    background:url("../img/profile.png") center no-repeat;
+    background-size:cover;
+}
+
 #ea-mailto {
     text-decoration: underline;
     color: #3c3c3c;
