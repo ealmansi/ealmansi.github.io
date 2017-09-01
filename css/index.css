@@ -1,16 +1,23 @@
-html, body, #ea-container, #ea-row {
+html, body, #ea-container, #ea-row, #ea-col {
     height: 100%;
+    overflow: auto;
 }
 
 #ea-row {
-    background: #cbffca;
+    background: #caebff;
 }
 
 #ea-col {
     background: #ffffff;
 }
 
-#ea-logo {
+#ea-logo-sm {
+    background: #caebff;
+    margin: 0px -15px; 
+    padding: 15px 0px 15px 15px;
+}
+
+#ea-logo-lg {
     margin-top: 15px;
 }
 
