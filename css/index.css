@@ -21,10 +21,6 @@ html, body, #ea-container, #ea-row, #ea-col {
     margin-top: 15px;
 }
 
-#ea-emilio {
-    display: inline;
-}
-
 #ea-profile-wrapper {
     opacity: 0;
     transition: opacity 150ms linear;
@@ -40,6 +36,25 @@ html, body, #ea-container, #ea-row, #ea-col {
     opacity: 1;
 }
 
+#ea-uba {
+    margin-right: -3px;
+}
+
+#ea-uba-wrapper {
+    opacity: 0;
+    transition: opacity 150ms linear;
+    height: auto;
+    left: 15px;
+    max-width: 150px;
+    overflow: hidden;
+    position: absolute;
+    top: 15px;
+}
+
+#ea-uba:hover + #ea-uba-wrapper {
+    opacity: 1;
+}
+
 .with-border {
     border: 1px solid #b3b3b3;
     border-radius: 75px;
@@ -47,8 +62,8 @@ html, body, #ea-container, #ea-row, #ea-col {
 
 #ea-intro {
     margin-top: 50px;
-    margin-bottom: 20px;
-    font-size: 18px;
+    margin-bottom: 40px;
+    font-size: 16px;
     color: #3c3c3c;
 }
 
