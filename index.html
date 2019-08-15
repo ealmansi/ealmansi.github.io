@@ -67,11 +67,22 @@
       padding: 0;
     }
     footer ul li {
-      display: inline-block;
-      margin-right: 10px;
-      color: gray;
       min-width: 100px;
+      color: gray;
     }
+    @media only screen and (min-width: 500px) {
+      footer ul li {
+        display: inline;
+        padding: 0 10px;
+        border-right: 2px lightgray solid;
+      }
+      footer ul li:first-of-type {
+        padding-left: 0;
+      }
+      footer ul li:last-of-type {
+        border-right: none;
+      }
+    } 
     footer ul li a {
       color: gray;
       text-decoration: none;
