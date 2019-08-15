@@ -10,7 +10,7 @@ function Home () {
         <meta name='description' content='Software Engineer from Argentina. Studied Computer Science at the University of Buenos Aires. Passionate about blockchain technology and cryptocurrencies.' />
         <meta property='og:title' content='Emilio Almansi' />
         <meta property='og:url' content='https://emilio.almansi.me' />
-        <meta property='og:image' content='https://emilio.almansi.me/static/img/profile.png' />
+        <meta property='og:image' content='https://emilio.almansi.me/static/img/profile.jpeg' />
         <meta property='og:description' content='Software Engineer from Argentina. Studied Computer Science at the University of Buenos Aires. Passionate about blockchain technology and cryptocurrencies.' />
         <link href='/static/css/nunito.css' rel='stylesheet' />
         <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
