@@ -7,17 +7,17 @@ function Home () {
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <title>Emilio Almansi</title>
         <meta name='title' content='Emilio Almansi' />
-        <meta name='description' content='Software Engineer from Argentina. Studied Computer Science at the University of Buenos Aires. Passionate about blockchain technology and cryptocurrencies.' />
+        <meta name='description' content='Software Engineer based in Argentina. Computer Science at the University of Buenos Aires. Passionate about blockchain technology and cryptocurrencies.' />
         <meta property='og:title' content='Emilio Almansi' />
         <meta property='og:url' content='https://emilio.almansi.me' />
         <meta property='og:image' content='https://emilio.almansi.me/static/img/profile.jpeg' />
-        <meta property='og:description' content='Software Engineer from Argentina. Studied Computer Science at the University of Buenos Aires. Passionate about blockchain technology and cryptocurrencies.' />
+        <meta property='og:description' content='Software Engineer. Buenos Aires, Argentina. Computer Science at the University of Buenos Aires. Passionate about blockchain technology and cryptocurrencies.' />
         <link href='/static/css/nunito.css' rel='stylesheet' />
         <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
       </Head>
       <section>
         <h1>Emilio Almansi</h1>
-        <p>I'm a software engineer based in Buenos Aires, Argentina, where I studied Computer Science at the University of Buenos Aires. I'm passionate about blockchain technology and cryptocurrencies, as well as the development of programming languages and other tools for improving the quality of software.</p>
+        <p>I'm a software engineer based in Buenos Aires, Argentina, and I studied Computer Science at the University of Buenos Aires. I'm passionate about blockchain technology and cryptocurrencies, as well as the development of programming languages and other tools for improving the quality of software.</p>
         <p>If you would like to contact me, please go ahead and send me a message via <a href='mailto:emilio@almansi.me' target='_blank' rel='noopener noreferrer' className='green'>email</a>, <a href='https://api.whatsapp.com/send?phone=5491158086755' target='_blank' rel='noopener noreferrer' className='green'>WhatsApp</a>, or <a href='https://github.com/ealmansi' target='_blank' rel='noopener noreferrer' className='green'>Github</a>. For any questions regarding a particular open-source project, please open on issue on that project.</p>
         <div>
           <ul className='social'>
