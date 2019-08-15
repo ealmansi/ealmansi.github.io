@@ -14,6 +14,6 @@
     "build": "next build",
     "start": "next start",
     "preexport": "yarn build",
-    "export": "next export && cp out/*.html ."
+    "export": "next export && cp -R out/_next out/*.html ."
   }
 }
