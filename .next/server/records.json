@@ -1,0 +1,39 @@
+{
+  "modules": {
+    "byIdentifier": {
+      "multi private-next-pages/index.js": 0,
+      "multi next/dist/pages/_app": 1,
+      "multi next/dist/pages/_error": 2,
+      "multi next/dist/pages/_document": 3
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3
+    }
+  },
+  "chunks": {
+    "byName": {
+      "static/UD51AsRxf-1aC4AYy3HDr/pages/_app.js": 0,
+      "static/UD51AsRxf-1aC4AYy3HDr/pages/_document.js": 1,
+      "static/UD51AsRxf-1aC4AYy3HDr/pages/_error.js": 2,
+      "static/UD51AsRxf-1aC4AYy3HDr/pages/index.js": 3,
+      "static/QtxPkLdz4OjHggvq7-ghH/pages/_app.js": 4,
+      "static/QtxPkLdz4OjHggvq7-ghH/pages/_document.js": 5,
+      "static/QtxPkLdz4OjHggvq7-ghH/pages/_error.js": 6,
+      "static/QtxPkLdz4OjHggvq7-ghH/pages/index.js": 7,
+      "static/lERTTAmcQcs50rjoNuhDU/pages/_app.js": 0,
+      "static/lERTTAmcQcs50rjoNuhDU/pages/_document.js": 1,
+      "static/lERTTAmcQcs50rjoNuhDU/pages/_error.js": 2,
+      "static/lERTTAmcQcs50rjoNuhDU/pages/index.js": 3
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      2,
+      3
+    ]
+  }
+}

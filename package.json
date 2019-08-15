@@ -1,12 +1,19 @@
 {
-  "name": "ealmansidotcom",
-  "version": "0.1.0",
-  "description": "Personal Website - Emilio Almansi",
+  "name": "ealmansi-web",
+  "version": "2.0.0",
   "main": "index.js",
-  "author": "Emilio Almansi",
   "license": "MIT",
+  "author": "Emilio Almansi <emilio@almansi.me>",
   "dependencies": {
-    "http-server": "0.11.1",
-    "pm2": "2.10.2"
+    "next": "9.0.3",
+    "react": "16.9.0",
+    "react-dom": "16.9.0"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "preexport": "yarn build",
+    "export": "next export && cp out/*.html ."
   }
 }
