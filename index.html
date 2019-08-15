@@ -94,12 +94,19 @@
     footer ul li a {
       color: gray;
       text-decoration: none;
+      cursor: default;
     }
     a.black {
       color: black;
     }
     a.green {
       color: green;
+    }
+    .force-select-all {
+      -webkit-user-select: all;
+      -moz-user-select: all;
+      -ms-user-select: all;
+      user-select: all;
     }
   </style>
 </head>
@@ -168,8 +175,8 @@
     <hr />
     <footer>
       <ul>
-        <li><span>emilio@almansi.me</span></li>
-        <li><span>+54 9 (11) 5808-6755</span></li>
+        <li><span class="force-select-all">emilio@almansi.me</span></li>
+        <li><span class="force-select-all">+54 9 (11) 5808-6755</span></li>
         <li><a href="icod.html" target="_blank" rel="noopener noreferrer">ICOD</a></li>
       </ul>
     </footer>
