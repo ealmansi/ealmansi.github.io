@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /icod.html
+Sitemap: https://emilio.almansi.me/sitemap.xml
