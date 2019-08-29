@@ -3,13 +3,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Emilio Almansi</title>
-  <meta name="title" content="Emilio Almansi" />
-  <meta name="description" content="Full-Stack and Blockchain Engineer from Buenos Aires, Argentina. Studied Computer Science at the University of Buenos Aires." />
-  <meta property="og:title" content="Emilio Almansi" />
-  <meta property="og:url" content="https://emilio.almansi.me" />
-  <meta property="og:image" content="https://emilio.almansi.me/static/img/profile.jpeg" />
-  <meta property="og:description" content="Full-Stack and Blockchain Engineer from Buenos Aires, Argentina. Studied Computer Science at the University of Buenos Aires." />
+  <link rel="canonical" href="https://emilio.almansi.me/" />
+  <title>Emilio Almansi | Software Engineer</title>
+  <meta name="title" content="Emilio Almansi | Software Engineer" />
+  <meta name="description" content="I'm a full-stack and blockchain engineer based in Buenos Aires, Argentina. Learn more about me." />
+  <meta name="theme-color" content="#ffffff"></meta>
+  <meta name="og:title" content="Emilio Almansi | Software Engineer"/>
+  <meta name="og:type" content="software"/>
+  <meta name="og:url" content="https://emilio.almansi.me/"/>
+  <meta name="og:image" content="https://emilio.almansi.me/static/img/profile.jpeg"/>
+  <meta name="og:site_name" content="Emilio Almansi | Software Engineer"/>
+  <meta name="og:description" content="I'm a full-stack and blockchain engineer based in Buenos Aires, Argentina. Learn more about me."/>
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
   <style>
     /* latin */
@@ -66,6 +70,12 @@
       margin: 0;
       padding: 0;
     }
+    #education ul.items li {
+      margin-bottom: 15px;
+    }
+    #education {
+      margin-bottom: 20px;
+    }
     footer {
       font-size: medium;
     }
@@ -109,6 +119,13 @@
       user-select: all;
     }
   </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146616171-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-146616171-2');
+  </script>
 </head>
 <body>
   <main>
@@ -149,10 +166,12 @@
     <div>
       <h5>Some Projects I Have Worked On</h5>
       <ul class="items">
+        <li><span><a href="https://graphqlzero.almansi.me" target="_blank" rel="noopener noreferrer" class="green">GraphQLZero</a> — A simple, zero-config mock GraphQL API for testing and prototyping.</span></li>
         <li><span><a href="https://www.npmjs.com/package/cashaddrjs" target="_blank" rel="noopener noreferrer" class="green">CashAddr.js</a> — JavaScript implementation of the CashAddr specification.</span></li>
         <li><span><a href="https://www.npmjs.com/package/bchaddrjs" target="_blank" rel="noopener noreferrer" class="green">BchAddr.js</a> — Bitcoin Cash general purpose address translation for Node.js and web browsers.</span></li>
         <li><span><a href="https://www.moneybutton.com" target="_blank" rel="noopener noreferrer" class="green">Money Button</a> — A user-friendly, non-custodial cryptocurrency wallet for online payments.</span></li>
         <li><span><a href="https://www.yours.org" target="_blank" rel="noopener noreferrer" class="green">Yours.org</a> — A social network where users can earn money by creating or finding good content.</span></li>
+        <li><span><a href="https://www.npmjs.com/package/set-interval-async" target="_blank" rel="noopener noreferrer" class="green">SetIntervalAsync</a> — A modern version of setInterval for async functions in Node.js and browsers.</span></li>
       </ul>
     </div>
     <section>
@@ -165,11 +184,17 @@
         <li><span><strong>Google</strong> (Software Engineering Intern in Mountain View, CA, USA)</span></li>
       </ul>
     </section>
-    <section>
+    <section id="education">
       <h5>Education</h5>
       <ul class="items">
-        <li><span><strong><a href="https://en.wikipedia.org/wiki/Licentiate_(degree)#Argentina" target="_blank" rel="noopener noreferrer" class="black">Licentiate</a> in Computer Science</strong>. University of Buenos Aires, Argentina.</span></li>
-        <li><span><strong>Computer Science Analyst</strong>. University of Buenos Aires, Argentina.</span></li>
+        <li>
+          <span><strong><a href="https://en.wikipedia.org/wiki/Licentiate_(degree)#Argentina" target="_blank" rel="noopener noreferrer" class="black">Licentiate</a> in Computer Science</strong>. University of Buenos Aires, Argentina.</span><br />
+          <span><em>Similar to combined master's and bachelor's degrees in Computer Science.</em></span>
+        </li>
+        <li>
+          <span><strong>Analyst in Computer Science</strong>. University of Buenos Aires, Argentina.</span><br />
+          <span><em>Similar to bachelor's degree in Computer Science.</em></span>
+        </li>
       </ul>
     </section>
     <hr />
