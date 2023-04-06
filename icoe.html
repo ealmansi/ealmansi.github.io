@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ICOE</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body, input, select, textarea, button {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        color: #444;
+      }
+      input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+        color: #666;
+        opacity: 0.75;
+      }
+      input:-moz-placeholder, textarea:-moz-placeholder {
+        color: #666;
+        opacity: 0.75;
+      }
+      input::-moz-placeholder, textarea::-moz-placeholder {
+        color: #666;
+        opacity: 0.75;
+      }
+      input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+        color: #666;
+        opacity: 0.75;
+      }
+      input[type=text], input[type=password], textarea {
+        border: 1px ridge #EBE9ED;
+        padding: 5px;
+      }
+      button, input[type=submit] {
+        border: none;
+        background-color: #ddd;
+      }
+      textarea {
+        display: block;
+      }
+      section {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0 10px;
+      }
+      form {
+        margin-top: 40px;
+      }
+      form input {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 5px;
+      }
+      form input[type=submit]:first-child {
+        margin-right: 4px;
+      }
+      form input[type=submit] {
+        width: calc(50% - 2px);
+        height: 46px;
+        cursor: pointer;
+      }
+      textarea {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 5px;
+      }
+      textarea, input {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <header>
+        <h1>ICOE</h1>
+      </header>
+      <div>
+        <form id="show-form" onsubmit="return false;">
+          <input type="password" id="password" name="password" placeholder="Password" /><br />
+          <div><input type="submit" id="show-button" value="Show" /><input type="submit" id="clear-button" value="Clear" /></div>
+        </form>
+        <textarea id="plaintext" name="plaintext" form="show-form" rows="10" placeholder="Please enter the password in the field above and click 'Show'." disabled></textarea>
+      </div>
+    </section>
+  </body>
+  <script>
+    ;(function () {
+      'use strict';
+
+      /**
+      * Constants.
+      */
+
+      var webCrypto = window.crypto || window.msCrypto || window.webkitCrypto || window.mozCrypto
+      var pbkdf2Salt = new Uint8Array(
+        [8, 197, 37, 195, 28, 68, 95, 244, 172, 120, 36, 13, 17, 99, 142, 245]
+      )
+      var pbkdf2Iterations = 1000000
+      var ivByteLength = 12
+      var ciphertext1 = "NkqrBS+gY7FYBFnWuoCFFh7K5UHxMqwGxLL4X7uAr1ARsicGJEpnRqgwMamtNezn+q3F0BK+3JcuXQeDSntMfAe9TWXaq3m0DEMIZKvZuyw8RuxMm7s+1oWpDPUeFU3fqKBgdLZNygUVuw8sUcI1gSA5D8TxVB7yGwxboEyUCfvlGThNBOSCkkbiM42NlQKsk2ioUlA63iJYJMNnSxujPcGyYD1ex9emCOTFBgkCYwGQn6Dj00MGtbwiYEtMcPOI2ld9+WW4"
+      var ciphertext2 = "FqzWxgdRgmAS4kfZ4CQvbeDJiiTQQh/N7mMb/VlwV56JYLTbua1+Kd7eKwzMU7713Ig6wmlNeJEDHoWQAH5f29P5P1g="
+
+      /**
+      * ArrayBuffer utilities.
+      */
+
+      function base64ToBuffer (base64) {
+        var data = window.atob(base64)
+        var array = new Uint8Array(data.length)
+        for (var i = 0; i < data.length; ++i) {
+          array[i] = data.charCodeAt(i)
+        }
+        return array.buffer
+      }
+
+      function stringToBuffer (string) {
+        var utf8 = unescape(encodeURIComponent(string))
+        var array = []
+        for (var i = 0; i < utf8.length; ++i) {
+          array.push(utf8.charCodeAt(i))
+        }
+        return new Uint8Array(array).buffer
+      }
+
+      function bufferToString (buffer) {
+        var utf8 = String.fromCharCode.apply(null, new Uint8Array(buffer))
+        return decodeURIComponent(escape(utf8))
+      }
+
+      /**
+      * Crypto.
+      */
+
+      function decrypt (ciphertext, password) {
+        try {
+          var ciphertextBuffer = base64ToBuffer(ciphertext)
+          var ivBuffer = ciphertextBuffer.slice(0, ivByteLength)
+          var baseCiphertextBuffer = ciphertextBuffer.slice(ivByteLength)
+          return Promise.resolve().then(
+            function () {
+              return deriveKey(password)
+            }
+          ).then(
+            function (key) {
+              return webCrypto.subtle.decrypt(
+                {
+                  name: 'AES-GCM',
+                  iv: ivBuffer
+                },
+                key,
+                baseCiphertextBuffer
+              )
+            }
+          ).then(
+            function (plaintextBuffer) {
+              return bufferToString(plaintextBuffer)
+            }
+          )
+        } catch (err) {
+          return Promise.reject(err)
+        }
+      }
+
+      function deriveKey (password) {
+        return Promise.resolve().then(
+          function () {
+            return webCrypto.subtle.importKey(
+              'raw',
+              stringToBuffer(password),
+              {
+                name: 'PBKDF2'
+              },
+              false,
+              ['deriveBits']
+            )
+          }
+        ).then(
+          function (key) {
+            return webCrypto.subtle.deriveBits(
+              {
+                name: 'PBKDF2',
+                salt: pbkdf2Salt,
+                iterations: pbkdf2Iterations,
+                hash: {
+                  name: 'SHA-256'
+                }
+              },
+              key,
+              256
+            )
+          }
+        ).then(
+          function (bits) {
+            return webCrypto.subtle.importKey(
+              'raw',
+              bits,
+              {
+                name: 'AES-GCM'
+              },
+              false,
+              ['encrypt', 'decrypt']
+            )
+          }
+        )
+      }
+
+      /**
+      * DOM.
+      */
+
+      function main () {
+        var showButton = document.getElementById('show-button')
+        showButton.addEventListener('click', onShow)
+        var clearButton = document.getElementById('clear-button')
+        clearButton.addEventListener('click', onClear)
+      }
+
+      function onShow () {
+        var password = getElementValueById('password')
+        if (
+          password.length === 0
+        ) {
+          onError(
+            new Error(
+              "Please enter the password"
+            )
+          )
+          return
+        }
+        Promise.resolve().then(
+          function () {
+            return decrypt(ciphertext1, password)
+          }
+        ).catch(
+          function () {
+            return decrypt(ciphertext2, password)
+          }
+        ).then(
+          onShowSuccess
+        ).catch(
+          function () {
+            onError(
+              new Error(
+                "Please try typing the password again or try in a newer device"
+              )
+            )
+          }
+        )
+      }
+
+      function onShowSuccess (plaintext) {
+        setElementValueById('password', '')
+        setElementValueById('plaintext', plaintext)
+      }
+
+      function onError (err) {
+        alert(err.message || err.name || 'Unexpected error.')
+      }
+
+      function onClear () {
+        setElementValueById('password', '')
+        setElementValueById('plaintext', '')
+      }
+
+      function getElementValueById (elementId) {
+        var element = document.getElementById(elementId)
+        return element.value
+      }
+
+      function setElementValueById (elementId, value) {
+        var element = document.getElementById(elementId)
+        element.value = value
+      }
+
+      main()
+
+    })()
+  </script>
+</html>
